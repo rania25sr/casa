@@ -1,5 +1,5 @@
 import { startTransition, useEffect, useRef, useState } from 'react';
-import logoImage from '../logo2.png';
+import logoImage from '../logo3.jpg';
 
 const prefersReducedMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -295,9 +295,8 @@ function ReassuranceIcon({ type }) {
 
 function Brand() {
   return (
-    <RouteLink className="brand" to="/" aria-label="La Casa Parapharmacie, accueil">
-      <span className="brand-symbol brand-symbol--image"><img src={logoImage} alt="" /></span>
-      <span className="brand-copy"><strong>la casa</strong><small>PARAPHARMACIE</small></span>
+    <RouteLink className="brand" to="/" aria-label="Ons Bien-être Parapharmacie, accueil">
+      <span className="brand-logo"><img src={logoImage} alt="Ons Bien-être Parapharmacie" /></span>
     </RouteLink>
   );
 }
@@ -326,6 +325,13 @@ function App() {
 
   const cartItems = cart.reduce((total, item) => total + item.quantity, 0);
   const cartTotal = cart.reduce((total, item) => total + Number.parseFloat(item.product.price.replace(',', '.')) * item.quantity, 0);
+
+  useEffect(() => {
+    document.querySelectorAll('link[rel="icon"], link[rel="apple-touch-icon"]').forEach((link) => {
+      link.href = logoImage;
+      link.type = 'image/jpeg';
+    });
+  }, []);
 
   const navigate = (to) => {
     const target = new URL(to, window.location.origin);
@@ -589,8 +595,8 @@ function App() {
       )}
 
       <footer className="site-footer">
-        <div className="footer-inner"><div className="footer-brand-column"><div className="footer-brand-lockup"><div className="footer-logo-frame"><img src={logoImage} alt="Logo la casa Parapharmacie" /></div><div className="footer-wordmark"><strong>la casa</strong><span>PARAPHARMACIE</span></div></div><p>Votre bien-être naturel,<br /><em>notre priorité.</em></p><div className="social-links"><a href="https://www.instagram.com/" target="_blank" rel="noreferrer" aria-label="Instagram">ig</a><a href="https://www.facebook.com/" target="_blank" rel="noreferrer" aria-label="Facebook">f</a><a href="https://www.pinterest.com/" target="_blank" rel="noreferrer" aria-label="Pinterest">p</a></div></div><div className="footer-links-column"><h3>Nos produits</h3><RouteLink to="/categorie/visage">Visage</RouteLink><RouteLink to="/categorie/corps">Corps</RouteLink><RouteLink to="/categorie/bien-etre">Bien-être</RouteLink><RouteLink to="/nouveautes">Nouveautés</RouteLink><RouteLink to="/promotions">Promotions</RouteLink></div><div className="footer-links-column"><h3>Aide &amp; informations</h3><RouteLink to="/livraison">Livraison &amp; retours</RouteLink><RouteLink to="/faq">FAQ</RouteLink><RouteLink to="/contact">Nous contacter</RouteLink><RouteLink to="/cgv">CGV</RouteLink><RouteLink to="/confidentialite">Politique de confidentialité</RouteLink></div><div className="footer-newsletter"><p className="footer-kicker">Restons en contact</p><h3>Inscrivez-vous à<br />notre newsletter</h3><p>Recevez nos offres exclusives et nos conseils beauté.</p><RouteLink to="/newsletter" className="footer-mail-link">Votre adresse e-mail <span>→</span></RouteLink></div></div>
-        <div className="footer-bottom"><span>© 2026 la casa. Tous droits réservés.</span><span>Conçu avec soin à Tunis <i aria-hidden="true">✦</i></span></div>
+        <div className="footer-inner"><div className="footer-brand-column"><div className="footer-brand-lockup"><div className="footer-logo-frame"><img src={logoImage} alt="Logo Ons Bien-être Parapharmacie" /></div></div><p>Votre bien-être naturel,<br /><em>notre priorité.</em></p><div className="social-links"><a href="https://www.instagram.com/" target="_blank" rel="noreferrer" aria-label="Instagram">ig</a><a href="https://www.facebook.com/" target="_blank" rel="noreferrer" aria-label="Facebook">f</a><a href="https://www.pinterest.com/" target="_blank" rel="noreferrer" aria-label="Pinterest">p</a></div></div><div className="footer-links-column"><h3>Nos produits</h3><RouteLink to="/categorie/visage">Visage</RouteLink><RouteLink to="/categorie/corps">Corps</RouteLink><RouteLink to="/categorie/bien-etre">Bien-être</RouteLink><RouteLink to="/nouveautes">Nouveautés</RouteLink><RouteLink to="/promotions">Promotions</RouteLink></div><div className="footer-links-column"><h3>Aide &amp; informations</h3><RouteLink to="/livraison">Livraison &amp; retours</RouteLink><RouteLink to="/faq">FAQ</RouteLink><RouteLink to="/contact">Nous contacter</RouteLink><RouteLink to="/cgv">CGV</RouteLink><RouteLink to="/confidentialite">Politique de confidentialité</RouteLink></div><div className="footer-newsletter"><p className="footer-kicker">Restons en contact</p><h3>Inscrivez-vous à<br />notre newsletter</h3><p>Recevez nos offres exclusives et nos conseils beauté.</p><RouteLink to="/newsletter" className="footer-mail-link">Votre adresse e-mail <span>→</span></RouteLink></div></div>
+        <div className="footer-bottom"><span>© 2026 Ons Bien-être. Tous droits réservés.</span><span>Conçu avec soin à Tunis <i aria-hidden="true">✦</i></span></div>
       </footer>
 
       <div className={`toast${toast ? ' is-visible' : ''}`} role="status" aria-live="polite">{toast}</div>
