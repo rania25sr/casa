@@ -219,14 +219,14 @@ button {
   z-index: 35;
   top: 0;
   color: var(--white);
-  background: rgba(43, 33, 27, 0.97);
+  background: rgba(61, 45, 36, 0.97);
   box-shadow: 0 1px 0 rgba(255, 253, 248, 0.08);
   transition: background 400ms ease, box-shadow 400ms ease;
 }
 
 .site-header.is-compact {
-  background: rgba(43, 33, 27, 0.99);
-  box-shadow: 0 12px 28px rgba(43, 33, 27, 0.12);
+  background: rgba(61, 45, 36, 0.99);
+  box-shadow: 0 12px 28px rgba(61, 45, 36, 0.12);
 }
 
 .nav-inner {
